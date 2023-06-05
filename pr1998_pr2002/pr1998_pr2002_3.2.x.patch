@@ -1,0 +1,1341 @@
+Submodule Loop contains modified content
+diff --git a/Loop/Loop.xcodeproj/project.pbxproj b/Loop/Loop.xcodeproj/project.pbxproj
+index 31b6ebff..b27b19f8 100644
+--- a/Loop/Loop.xcodeproj/project.pbxproj
++++ b/Loop/Loop.xcodeproj/project.pbxproj
+@@ -519,6 +519,11 @@
+ 		C1FB428D21791D2500FAB378 /* PumpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3B6F620BBCAA30026CAFA /* PumpManager.swift */; };
+ 		C1FB428F217921D600FAB378 /* PumpManagerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB428E217921D600FAB378 /* PumpManagerUI.swift */; };
+ 		C1FB4290217922A100FAB378 /* PumpManagerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB428E217921D600FAB378 /* PumpManagerUI.swift */; };
++		DDC389F62A2B61750066E2E8 /* ApplicationFactorStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC389F52A2B61750066E2E8 /* ApplicationFactorStrategy.swift */; };
++		DDC389F82A2B620B0066E2E8 /* GlucoseBasedApplicationFactorStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC389F72A2B620B0066E2E8 /* GlucoseBasedApplicationFactorStrategy.swift */; };
++		DDC389FA2A2B62470066E2E8 /* ConstantDosingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC389F92A2B62470066E2E8 /* ConstantDosingStrategy.swift */; };
++		DDC389FC2A2BC6670066E2E8 /* SettingsView+algorithmExperimentsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC389FB2A2BC6670066E2E8 /* SettingsView+algorithmExperimentsSection.swift */; };
++		DDC389FE2A2C4C830066E2E8 /* GlucoseBasedApplicationFactorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC389FD2A2C4C830066E2E8 /* GlucoseBasedApplicationFactorSelectionView.swift */; };
+ 		E90909D124E34AC500F963D2 /* high_and_rising_with_cob_momentum_effect.json in Resources */ = {isa = PBXBuildFile; fileRef = E90909CC24E34AC500F963D2 /* high_and_rising_with_cob_momentum_effect.json */; };
+ 		E90909D224E34AC500F963D2 /* high_and_rising_with_cob_insulin_effect.json in Resources */ = {isa = PBXBuildFile; fileRef = E90909CD24E34AC500F963D2 /* high_and_rising_with_cob_insulin_effect.json */; };
+ 		E90909D324E34AC500F963D2 /* high_and_rising_with_cob_predicted_glucose.json in Resources */ = {isa = PBXBuildFile; fileRef = E90909CE24E34AC500F963D2 /* high_and_rising_with_cob_predicted_glucose.json */; };
+@@ -1687,6 +1692,11 @@
+ 		C1FF3D4B29C786A900BDC1EC /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+ 		C1FF3D4C29C786A900BDC1EC /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+ 		C1FF3D4D29C786A900BDC1EC /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/InfoPlist.strings; sourceTree = "<group>"; };
++		DDC389F52A2B61750066E2E8 /* ApplicationFactorStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFactorStrategy.swift; sourceTree = "<group>"; };
++		DDC389F72A2B620B0066E2E8 /* GlucoseBasedApplicationFactorStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseBasedApplicationFactorStrategy.swift; sourceTree = "<group>"; };
++		DDC389F92A2B62470066E2E8 /* ConstantDosingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantDosingStrategy.swift; sourceTree = "<group>"; };
++		DDC389FB2A2BC6670066E2E8 /* SettingsView+algorithmExperimentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView+algorithmExperimentsSection.swift"; sourceTree = "<group>"; };
++		DDC389FD2A2C4C830066E2E8 /* GlucoseBasedApplicationFactorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseBasedApplicationFactorSelectionView.swift; sourceTree = "<group>"; };
+ 		E90909CC24E34AC500F963D2 /* high_and_rising_with_cob_momentum_effect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = high_and_rising_with_cob_momentum_effect.json; sourceTree = "<group>"; };
+ 		E90909CD24E34AC500F963D2 /* high_and_rising_with_cob_insulin_effect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = high_and_rising_with_cob_insulin_effect.json; sourceTree = "<group>"; };
+ 		E90909CE24E34AC500F963D2 /* high_and_rising_with_cob_predicted_glucose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = high_and_rising_with_cob_predicted_glucose.json; sourceTree = "<group>"; };
+@@ -2314,6 +2324,7 @@
+ 			isa = PBXGroup;
+ 			children = (
+ 				A98556842493F901000FD662 /* AlertStore+SimulatedCoreData.swift */,
++				DDC389FB2A2BC6670066E2E8 /* SettingsView+algorithmExperimentsSection.swift */,
+ 				C1D289B422F90A52003FFBD9 /* BasalDeliveryState.swift */,
+ 				A9F703722489BC8500C98AD8 /* CarbStore+SimulatedCoreData.swift */,
+ 				C17824991E1999FA00D9D25C /* CaseCountable.swift */,
+@@ -2400,6 +2411,7 @@
+ 				43F64DD81D9C92C900D24DC6 /* TitleSubtitleTableViewCell.swift */,
+ 				4311FB9A1F37FE1B00D4C0A7 /* TitleSubtitleTextFieldTableViewCell.swift */,
+ 				C1AF062229426300002C1B19 /* ManualGlucoseEntryRow.swift */,
++				DDC389FD2A2C4C830066E2E8 /* GlucoseBasedApplicationFactorSelectionView.swift */,
+ 			);
+ 			path = Views;
+ 			sourceTree = "<group>";
+@@ -2440,6 +2452,9 @@
+ 				E9B355232935906B0076AB04 /* Missed Meal Detection */,
+ 				C1F2075B26D6F9B0007AB7EB /* ProfileExpirationAlerter.swift */,
+ 				A96DAC2B2838F31200D94E38 /* SharedLogging.swift */,
++				DDC389F52A2B61750066E2E8 /* ApplicationFactorStrategy.swift */,
++				DDC389F72A2B620B0066E2E8 /* GlucoseBasedApplicationFactorStrategy.swift */,
++				DDC389F92A2B62470066E2E8 /* ConstantDosingStrategy.swift */,
+ 			);
+ 			path = Managers;
+ 			sourceTree = "<group>";
+@@ -3824,6 +3839,7 @@
+ 				C1201E2C23ECDBD0002DA84A /* WatchContextRequestUserInfo.swift in Sources */,
+ 				1D49795824E7289700948F05 /* ServicesViewModel.swift in Sources */,
+ 				1D4A3E2D2478628500FD601B /* StoredAlert+CoreDataClass.swift in Sources */,
++				DDC389FA2A2B62470066E2E8 /* ConstantDosingStrategy.swift in Sources */,
+ 				892D7C5123B54A15008A9656 /* CarbEntryViewController.swift in Sources */,
+ 				B4E202302661063E009421B5 /* ClosedLoopStatus.swift in Sources */,
+ 				C191D2A125B3ACAA00C26C0B /* DosingStrategySelectionView.swift in Sources */,
+@@ -3856,6 +3872,7 @@
+ 				1DB619AC270BAD3D006C9D07 /* VersionUpdateViewModel.swift in Sources */,
+ 				A9C62D882331703100535612 /* Service.swift in Sources */,
+ 				89CAB36324C8FE96009EE3CE /* PredictedGlucoseChartView.swift in Sources */,
++				DDC389F82A2B620B0066E2E8 /* GlucoseBasedApplicationFactorStrategy.swift in Sources */,
+ 				4F6663941E905FD2009E74FC /* ChartColorPalette+Loop.swift in Sources */,
+ 				A9F703732489BC8500C98AD8 /* CarbStore+SimulatedCoreData.swift in Sources */,
+ 				4328E0351CFC0AE100E199AA /* WatchDataManager.swift in Sources */,
+@@ -3884,6 +3901,7 @@
+ 				E9B080B1253BDA6300BAD8F8 /* UserDefaults+LoopIntents.swift in Sources */,
+ 				C1AF062329426300002C1B19 /* ManualGlucoseEntryRow.swift in Sources */,
+ 				C148CEE724FD91BD00711B3B /* DeliveryUncertaintyAlertManager.swift in Sources */,
++				DDC389FC2A2BC6670066E2E8 /* SettingsView+algorithmExperimentsSection.swift in Sources */,
+ 				1D12D3B92548EFDD00B53E8B /* main.swift in Sources */,
+ 				435400341C9F878D00D5819C /* SetBolusUserInfo.swift in Sources */,
+ 				A9DCF32A25B0FABF00C89088 /* LoopUIColorPalette+Default.swift in Sources */,
+@@ -3918,6 +3936,7 @@
+ 				A97F250825E056D500F0EE19 /* OnboardingManager.swift in Sources */,
+ 				438D42F91D7C88BC003244B0 /* PredictionInputEffect.swift in Sources */,
+ 				892A5D692230C41D008961AB /* RangeReplaceableCollection.swift in Sources */,
++				DDC389F62A2B61750066E2E8 /* ApplicationFactorStrategy.swift in Sources */,
+ 				4F70C2101DE8FAC5006380B7 /* ExtensionDataManager.swift in Sources */,
+ 				43DFB62320D4CAE7008A7BAE /* PumpManager.swift in Sources */,
+ 				A9FB75F1252BE320004C7D3F /* BolusDosingDecision.swift in Sources */,
+@@ -3926,6 +3945,7 @@
+ 				431A8C401EC6E8AB00823B9C /* CircleMaskView.swift in Sources */,
+ 				1D05219D2469F1F5000EBBDE /* AlertStore.swift in Sources */,
+ 				439897371CD2F80600223065 /* AnalyticsServicesManager.swift in Sources */,
++				DDC389FE2A2C4C830066E2E8 /* GlucoseBasedApplicationFactorSelectionView.swift in Sources */,
+ 				A9C62D842331700E00535612 /* DiagnosticLog+Subsystem.swift in Sources */,
+ 				895FE0952201234000FCF18A /* OverrideSelectionViewController.swift in Sources */,
+ 				C1EF747228D6A44A00C8C083 /* CrashRecoveryManager.swift in Sources */,
+diff --git a/Loop/Loop/Extensions/SettingsView+algorithmExperimentsSection.swift b/Loop/Loop/Extensions/SettingsView+algorithmExperimentsSection.swift
+new file mode 100644
+index 00000000..811a2f33
+--- /dev/null
++++ b/Loop/Loop/Extensions/SettingsView+algorithmExperimentsSection.swift
+@@ -0,0 +1,26 @@
++//
++//  SettingsView+algorithmExperimentsSection.swift
++//  Loop
++//
++//  Created by Jonas Björkert on 2023-06-03.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import SwiftUI
++import LoopKitUI
++
++extension SettingsView {
++    internal var algorithmExperimentsSection: some View {
++        Section(header: SectionHeader(label: NSLocalizedString("Algorithm Experiments ⚠️", comment: "The title of the Algorithm Experiments section in settings"))) {
++
++            NavigationLink(destination: GlucoseBasedApplicationFactorSelectionView(isGlucoseBasedApplicationFactorEnabled: $isGlucoseBasedApplicationFactorEnabled)) {
++                HStack {
++                    Text("Glucose Based Partial Application")
++                    Spacer()
++                    Text(isGlucoseBasedApplicationFactorEnabled ? "On" : "Off")
++                }
++            }
++        }
++    }
++}
+diff --git a/Loop/Loop/Managers/ApplicationFactorStrategy.swift b/Loop/Loop/Managers/ApplicationFactorStrategy.swift
+new file mode 100644
+index 00000000..bf67935c
+--- /dev/null
++++ b/Loop/Loop/Managers/ApplicationFactorStrategy.swift
+@@ -0,0 +1,20 @@
++//
++//  ApplicationFactorStrategy.swift
++//  Loop
++//
++//  Created by Jonas Björkert on 2023-06-03.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import HealthKit
++import LoopKit
++import LoopCore
++
++protocol ApplicationFactorStrategy {
++    func calculateDosingFactor(
++        for glucose: HKQuantity,
++        correctionRangeSchedule: GlucoseRangeSchedule,
++        settings: LoopSettings
++    ) -> Double
++}
+diff --git a/Loop/Loop/Managers/ConstantDosingStrategy.swift b/Loop/Loop/Managers/ConstantDosingStrategy.swift
+new file mode 100644
+index 00000000..5084108e
+--- /dev/null
++++ b/Loop/Loop/Managers/ConstantDosingStrategy.swift
+@@ -0,0 +1,23 @@
++//
++//  ConstantDosingStrategy.swift
++//  Loop
++//
++//  Created by Jonas Björkert on 2023-06-03.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import HealthKit
++import LoopKit
++import LoopCore
++
++struct ConstantDosingStrategy: ApplicationFactorStrategy {
++    func calculateDosingFactor(
++        for glucose: HKQuantity,
++        correctionRangeSchedule: GlucoseRangeSchedule,
++        settings: LoopSettings
++    ) -> Double {
++        // The original strategy uses a constant dosing factor.
++        return LoopConstants.bolusPartialApplicationFactor
++    }
++}
+diff --git a/Loop/Loop/Managers/GlucoseBasedApplicationFactorStrategy.swift b/Loop/Loop/Managers/GlucoseBasedApplicationFactorStrategy.swift
+new file mode 100644
+index 00000000..41caa3d7
+--- /dev/null
++++ b/Loop/Loop/Managers/GlucoseBasedApplicationFactorStrategy.swift
+@@ -0,0 +1,42 @@
++//
++//  GlucoseBasedApplicationFactorStrategy.swift
++//  Loop
++//
++//  Created by Jonas Björkert on 2023-06-03.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import HealthKit
++import LoopKit
++import LoopCore
++
++struct GlucoseBasedApplicationFactorStrategy: ApplicationFactorStrategy {
++    static let minPartialApplicationFactor = 0.20 // min fraction of correction when glucose > minGlucoseSlidingScale
++    static let maxPartialApplicationFactor = 0.80 // max fraction of correction when glucose > maxGlucoseSlidingScale
++    // set minGlucoseSlidingScale based on user setting for correction range
++    // use mg/dL for calculations
++    static let minGlucoseDeltaSlidingScale = 10.0 // mg/dL
++    static let maxGlucoseSlidingScale = 200.0 // mg/dL
++
++    func calculateDosingFactor(
++        for glucose: HKQuantity,
++        correctionRangeSchedule: GlucoseRangeSchedule,
++        settings: LoopSettings
++    ) -> Double {
++        // Calculate current glucose and lower bound target
++        let currentGlucose = glucose.doubleValue(for: .milligramsPerDeciliter)
++        let correctionRange = correctionRangeSchedule.quantityRange(at: Date())
++        let lowerBoundTarget = correctionRange.lowerBound.doubleValue(for: .milligramsPerDeciliter)
++
++        // Calculate minimum glucose sliding scale and scaling fraction
++        let minGlucoseSlidingScale = GlucoseBasedApplicationFactorStrategy.minGlucoseDeltaSlidingScale + lowerBoundTarget
++        let scalingFraction = (GlucoseBasedApplicationFactorStrategy.maxPartialApplicationFactor - GlucoseBasedApplicationFactorStrategy.minPartialApplicationFactor) / (GlucoseBasedApplicationFactorStrategy.maxGlucoseSlidingScale - minGlucoseSlidingScale)
++        let scalingGlucose = max(currentGlucose - minGlucoseSlidingScale, 0.0)
++
++        // Calculate effectiveBolusApplicationFactor
++        let effectiveBolusApplicationFactor = min(GlucoseBasedApplicationFactorStrategy.minPartialApplicationFactor + scalingGlucose * scalingFraction, GlucoseBasedApplicationFactorStrategy.maxPartialApplicationFactor)
++
++        return effectiveBolusApplicationFactor
++    }
++}
+diff --git a/Loop/Loop/Managers/LoopDataManager.swift b/Loop/Loop/Managers/LoopDataManager.swift
+index 18a08166..ae3fceaa 100644
+--- a/Loop/Loop/Managers/LoopDataManager.swift
++++ b/Loop/Loop/Managers/LoopDataManager.swift
+@@ -1696,7 +1696,23 @@ extension LoopDataManager {
+                     return self.delegate?.roundBolusVolume(units: units) ?? units
+                 }
+ 
+-                let maxAutomaticBolus = min(iobHeadroom, maxBolus! * LoopConstants.bolusPartialApplicationFactor)
++                // Create dosing strategy based on user setting
++                let applicationFactorStrategy: ApplicationFactorStrategy = UserDefaults.standard.bool(forKey: "applyExperimentalGlucoseBasedApplicationFactor")
++                    ? GlucoseBasedApplicationFactorStrategy()
++                    : ConstantDosingStrategy()
++
++                let correctionRangeSchedule = settings.effectiveGlucoseTargetRangeSchedule()
++
++                let effectiveBolusApplicationFactor = applicationFactorStrategy.calculateDosingFactor(
++                    for: glucose.quantity,
++                    correctionRangeSchedule: correctionRangeSchedule!,
++                    settings: settings
++                )
++
++                self.logger.debug(" *** Glucose: %{public}@, effectiveBolusApplicationFactor: %.2f", glucose.quantity.description, effectiveBolusApplicationFactor)
++
++                // If a user customizes maxPartialApplicationFactor > 1; this respects maxBolus
++                let maxAutomaticBolus = min(iobHeadroom, maxBolus! * min(effectiveBolusApplicationFactor, 1.0))
+ 
+                 dosingRecommendation = predictedGlucose.recommendedAutomaticDose(
+                     to: glucoseTargetRange!,
+@@ -1706,7 +1722,7 @@ extension LoopDataManager {
+                     model: doseStore.insulinModelProvider.model(for: pumpInsulinType),
+                     basalRates: basalRateSchedule!,
+                     maxAutomaticBolus: maxAutomaticBolus,
+-                    partialApplicationFactor: LoopConstants.bolusPartialApplicationFactor * self.timeBasedDoseApplicationFactor,
++                    partialApplicationFactor: effectiveBolusApplicationFactor * self.timeBasedDoseApplicationFactor,
+                     lastTempBasal: lastTempBasal,
+                     volumeRounder: volumeRounder,
+                     rateRounder: rateRounder,
+@@ -2126,6 +2142,7 @@ extension LoopDataManager {
+                 "insulinOnBoard: \(String(describing: manager.insulinOnBoard))",
+                 "error: \(String(describing: state.error))",
+                 "overrideInUserDefaults: \(String(describing: UserDefaults.appGroup?.intentExtensionOverrideToSet))",
++                "applyExperimentalGlucoseBasedApplicationFactor: \(UserDefaults.standard.bool(forKey: "applyExperimentalGlucoseBasedApplicationFactor"))",
+                 "",
+                 String(reflecting: self.retrospectiveCorrection),
+                 "",
+diff --git a/Loop/Loop/Views/GlucoseBasedApplicationFactorSelectionView.swift b/Loop/Loop/Views/GlucoseBasedApplicationFactorSelectionView.swift
+new file mode 100644
+index 00000000..90d05d0c
+--- /dev/null
++++ b/Loop/Loop/Views/GlucoseBasedApplicationFactorSelectionView.swift
+@@ -0,0 +1,55 @@
++//
++//  GlucoseBasedApplicationFactorSelectionView.swift
++//  Loop
++//
++//  Created by Jonas Björkert on 2023-06-04.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import SwiftUI
++import LoopKit
++import LoopKitUI
++
++public struct GlucoseBasedApplicationFactorSelectionView: View {
++    @Binding var isGlucoseBasedApplicationFactorEnabled: Bool
++
++    public init(isGlucoseBasedApplicationFactorEnabled: Binding<Bool>) {
++        self._isGlucoseBasedApplicationFactorEnabled = isGlucoseBasedApplicationFactorEnabled
++    }
++
++    public var body: some View {
++        List {
++            automaticBolusSection
++        }
++        .navigationBarTitleDisplayMode(.inline)
++        .toolbar {
++            ToolbarItem(placement: .principal) {
++                VStack {
++                    Text("Glucose Based")
++                        .font(.headline)
++                    Text("Partial Application")
++                        .font(.subheadline)
++                }
++            }
++        }
++    }
++
++    private var automaticBolusSection: some View {
++        VStack {
++            DescriptiveText(label: NSLocalizedString("Active only when Automatic Bolus is selected under Dosing Strategy.\n\nWhen Glucose Based Partial Application is disabled, Automatic Bolus Dosing Strategy uses a constant percentage of 40% when Loop recommends a bolus.\n\nWhen enabled, this experimental feature varies the percentage of recommended bolus delivered each cycle with glucose level. Near correction range, use 20% (similar to Temp Basal). Gradually increase to a maximum of 80% at high glucose (200 mg/dL, 11.1 mmol/L).\n\nPlease be aware that during fast rising glucose, such as after an unannounced meal, this feature, combined with Loop's velocity and retrospective correction effects, may result in a larger dose than your ISF would call for.", comment: "Description of Glucose Based Partial Application toggle."), color: .black)
++            Section() {
++                Toggle(NSLocalizedString("Glucose Based Partial Application", comment: "Title for Glucose Based Partial Application toggle"), isOn: $isGlucoseBasedApplicationFactorEnabled)
++                    .onChange(of: isGlucoseBasedApplicationFactorEnabled) { newValue in
++                        UserDefaults.standard.set(newValue, forKey: "applyExperimentalGlucoseBasedApplicationFactor")
++                    }
++            }
++        }
++    }
++}
++
++struct EnhancedAutoBolusSelectionView_Previews: PreviewProvider {
++    static var previews: some View {
++        GlucoseBasedApplicationFactorSelectionView(isGlucoseBasedApplicationFactorEnabled: .constant(true))
++    }
++}
+diff --git a/Loop/Loop/Views/SettingsView.swift b/Loop/Loop/Views/SettingsView.swift
+index 90859273..3f0726b4 100644
+--- a/Loop/Loop/Views/SettingsView.swift
++++ b/Loop/Loop/Views/SettingsView.swift
+@@ -30,6 +30,9 @@ public struct SettingsView: View {
+     @State private var therapySettingsIsPresented: Bool = false
+     @State private var deletePumpDataAlertIsPresented = false
+     @State private var deleteCGMDataAlertIsPresented = false
++    @State private var profilesIsPresented: Bool = false
++    @State internal var enhancedAutoBolusIsPresented: Bool = false
++    @State internal var isGlucoseBasedApplicationFactorEnabled = UserDefaults.standard.bool(forKey: "applyExperimentalGlucoseBasedApplicationFactor")
+ 
+     public init(viewModel: SettingsViewModel) {
+         self.viewModel = viewModel
+@@ -39,27 +42,34 @@ public struct SettingsView: View {
+     public var body: some View {
+         NavigationView {
+             List {
+-                loopSection
+-                if versionUpdateViewModel.softwareUpdateAvailable {
+-                    softwareUpdateSection
+-                }
+-                if FeatureFlags.automaticBolusEnabled {
+-                    dosingStrategySection
+-                }
+-                alertManagementSection
+-                if viewModel.pumpManagerSettingsViewModel.isSetUp() {
+-                    configurationSection
+-                }
+-                deviceSettingsSection
+-                if viewModel.pumpManagerSettingsViewModel.isTestingDevice || viewModel.cgmManagerSettingsViewModel.isTestingDevice {
+-                    deleteDataSection
+-                }
+-                if viewModel.servicesViewModel.showServices {
+-                    servicesSection
++                Group {
++                    loopSection
++                    if versionUpdateViewModel.softwareUpdateAvailable {
++                        softwareUpdateSection
++                    }
++                    if FeatureFlags.automaticBolusEnabled {
++                        dosingStrategySection
++                    }
++                    // Note: Experimental Section
++                    algorithmExperimentsSection
++                    //
++                    alertManagementSection
++                    if viewModel.pumpManagerSettingsViewModel.isSetUp() {
++                        configurationSection
++                    }
++                    deviceSettingsSection
++                    if viewModel.pumpManagerSettingsViewModel.isTestingDevice || viewModel.cgmManagerSettingsViewModel.isTestingDevice {
++                        deleteDataSection
++                    }
+                 }
+-                supportSection
+-                if let profileExpiration = Bundle.main.profileExpiration, FeatureFlags.profileExpirationSettingsViewEnabled {
+-                    profileExpirationSection(profileExpiration: profileExpiration)
++                Group {
++                    if viewModel.servicesViewModel.showServices {
++                        servicesSection
++                    }
++                    supportSection
++                    if let profileExpiration = Bundle.main.profileExpiration, FeatureFlags.profileExpirationSettingsViewEnabled {
++                        profileExpirationSection(profileExpiration: profileExpiration)
++                    }
+                 }
+             }
+             .insetGroupedListStyle()
+@@ -150,7 +160,11 @@ extension SettingsView {
+             }
+         }
+     }
+-        
++
++    private var isAnySheetPresented: Bool {
++        therapySettingsIsPresented || profilesIsPresented
++    }
++
+     private var configurationSection: some View {
+         Section(header: SectionHeader(label: NSLocalizedString("Configuration", comment: "The title of the Configuration section in settings"))) {
+             LargeButton(action: { self.therapySettingsIsPresented = true },
+@@ -174,6 +188,26 @@ extension SettingsView {
+                         .environment(\.insulinTintColor, self.insulinTintColor)
+             }
+             
++            LargeButton(action: { self.profilesIsPresented = true },
++                        includeArrow: true,
++                        imageView: AnyView(Image(systemName: "arrow.triangle.2.circlepath").font(.system(size: 30, weight: .bold))),
++                        label: NSLocalizedString("Profiles", comment: "Title text for button to Profiles"),
++                        descriptiveText: NSLocalizedString("Switch between profiles for different scenarios", comment: "Descriptive text for Profiles"))
++           .sheet(isPresented: $profilesIsPresented) {
++                ProfileView(viewModel: ProfileViewModel(therapySettings: self.viewModel.therapySettings(),
++                                                        sensitivityOverridesEnabled: FeatureFlags.sensitivityOverridesEnabled,
++                                                        adultChildInsulinModelSelectionEnabled: FeatureFlags.adultChildInsulinModelSelectionEnabled,
++                                                        delegate: self.viewModel.therapySettingsViewModelDelegate))
++                .environmentObject(displayGlucoseUnitObservable)
++                .environment(\.dismissAction, self.dismiss)
++                .environment(\.appName, self.appName)
++                .environment(\.chartColorPalette, .primary)
++                .environment(\.carbTintColor, self.carbTintColor)
++                .environment(\.glucoseTintColor, self.glucoseTintColor)
++                .environment(\.guidanceColors, self.guidanceColors)
++                .environment(\.insulinTintColor, self.insulinTintColor)
++            }
++
+             ForEach(configurationMenuItemsForSupportPlugins) { item in
+                 item.view
+             }
+Submodule LoopKit contains modified content
+diff --git a/LoopKit/LoopKit.xcodeproj/project.pbxproj b/LoopKit/LoopKit.xcodeproj/project.pbxproj
+index 6b13fc8..564ff13 100644
+--- a/LoopKit/LoopKit.xcodeproj/project.pbxproj
++++ b/LoopKit/LoopKit.xcodeproj/project.pbxproj
+@@ -787,6 +787,11 @@
+ 		C1FAEC1D264AD6B400A3250B /* DeviceStatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FAEC1C264AD6B400A3250B /* DeviceStatusBadge.swift */; };
+ 		C1FAEC1F264AE12700A3250B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47ECF8725DC20810024A54D /* UIImage.swift */; };
+ 		C1FAEC21264AEEA300A3250B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FAEC20264AEEA300A3250B /* UIImage.swift */; };
++		DD508E062A17712D00EEF8FD /* ProfileViewModel+FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD508E052A17712D00EEF8FD /* ProfileViewModel+FileManagement.swift */; };
++		DD508E082A17763700EEF8FD /* NewProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD508E072A17763700EEF8FD /* NewProfileEditor.swift */; };
++		DD7122612A1D2AA4004FE653 /* ProfilePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7122602A1D2AA4004FE653 /* ProfilePreviewView.swift */; };
++		DDAF746729F422C600719F0A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF746629F422C600719F0A /* ProfileView.swift */; };
++		DDAF746929F4234000719F0A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF746829F4234000719F0A /* ProfileViewModel.swift */; };
+ 		E9077D2724ACD59F0066A88D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9077D2624ACD59F0066A88D /* InformationView.swift */; };
+ 		E9077D2A24ACDE2C0066A88D /* CorrectionRangeInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9077D2924ACDE2C0066A88D /* CorrectionRangeInformationView.swift */; };
+ 		E9086B2924B39EDC0062F5C8 /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9086B2824B39EDC0062F5C8 /* ChartsTableViewController.swift */; };
+@@ -1763,6 +1768,11 @@
+ 		C1FDCC0A29C786F90056E652 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
+ 		C1FDCC0B29C786F90056E652 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
+ 		C1FF3D4E29C786A900BDC1EC /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
++		DD508E052A17712D00EEF8FD /* ProfileViewModel+FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewModel+FileManagement.swift"; sourceTree = "<group>"; };
++		DD508E072A17763700EEF8FD /* NewProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileEditor.swift; sourceTree = "<group>"; };
++		DD7122602A1D2AA4004FE653 /* ProfilePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreviewView.swift; sourceTree = "<group>"; };
++		DDAF746629F422C600719F0A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
++		DDAF746829F4234000719F0A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+ 		E9077D2624ACD59F0066A88D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+ 		E9077D2924ACDE2C0066A88D /* CorrectionRangeInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionRangeInformationView.swift; sourceTree = "<group>"; };
+ 		E9086B2824B39EDC0062F5C8 /* ChartsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
+@@ -2942,11 +2952,13 @@
+ 			isa = PBXGroup;
+ 			children = (
+ 				B455F3A325FF7FF0000ED456 /* CorrectionRangeOverridesEditorViewModel.swift */,
++				DDAF746829F4234000719F0A /* ProfileViewModel.swift */,
+ 				B4B7C1BB2604E3FC007379F6 /* CorrectionRangeScheduleEditorViewModel.swift */,
+ 				B4D4C20C25F95A8700DA809D /* DisplayGlucoseUnitObservable.swift */,
+ 				B455F48025FF9A8B000ED456 /* InsulinSensitivityScheduleEditorViewModel.swift */,
+ 				B455F2A125FBE985000ED456 /* SuspendThresholdEditorViewModel.swift */,
+ 				1D1FCE2424BD42EF000300A8 /* TherapySettingsViewModel.swift */,
++				DD508E052A17712D00EEF8FD /* ProfileViewModel+FileManagement.swift */,
+ 			);
+ 			path = ViewModels;
+ 			sourceTree = "<group>";
+@@ -3077,6 +3089,9 @@
+ 				E96DCB5924AF74AC007117BC /* SuspendThresholdEditor.swift */,
+ 				1D1FCE2A24BE704A000300A8 /* TherapySetting+Settings.swift */,
+ 				1D1A019D24B678BF0077D86E /* TherapySettingsView.swift */,
++				DDAF746629F422C600719F0A /* ProfileView.swift */,
++				DD508E072A17763700EEF8FD /* NewProfileEditor.swift */,
++				DD7122602A1D2AA4004FE653 /* ProfilePreviewView.swift */,
+ 			);
+ 			path = "Settings Editors";
+ 			sourceTree = "<group>";
+@@ -3757,6 +3772,7 @@
+ 				E9086B4824B5405E0062F5C8 /* ChartAxisValueDoubleUnit.swift in Sources */,
+ 				B429D66C24BF7204003E1B4A /* GlucoseTrend.swift in Sources */,
+ 				432CF86720D76AB90066B889 /* SettingsTableViewCell.swift in Sources */,
++				DD508E082A17763700EEF8FD /* NewProfileEditor.swift in Sources */,
+ 				898B4E7B246DC6A70053C484 /* CorrectionRangeScheduleEditor.swift in Sources */,
+ 				E9E5E56A24D5CCE800B5DFFE /* OverrideViewCell.swift in Sources */,
+ 				892A5DB42231E191008961AB /* LevelMaskView.swift in Sources */,
+@@ -3812,8 +3828,10 @@
+ 				E9C58A6E24DA65E400487A17 /* HistoricalOverrideDetailView.swift in Sources */,
+ 				895FE08222011F0C00FCF18A /* LabeledTextFieldTableViewCell.swift in Sources */,
+ 				B43DA44224D9CD8500CAFF4E /* Environment+Colors.swift in Sources */,
++				DD508E062A17712D00EEF8FD /* ProfileViewModel+FileManagement.swift in Sources */,
+ 				892A5DB22231E191008961AB /* LoadingTableViewCell.swift in Sources */,
+ 				B4D3D4AD25B8A94E0085BA0F /* DisplayGlucoseUnitObserver.swift in Sources */,
++				DD7122612A1D2AA4004FE653 /* ProfilePreviewView.swift in Sources */,
+ 				E96DCB5A24AF74AC007117BC /* SuspendThresholdEditor.swift in Sources */,
+ 				E96DCB5824AEF50F007117BC /* SuspendThresholdInformationView.swift in Sources */,
+ 				C140E0522602908A000A4FF7 /* SettingsPresentationMode.swift in Sources */,
+@@ -3880,6 +3898,7 @@
+ 				E93C86B624D08CAD0073089B /* InsulinSensitivityInformationView.swift in Sources */,
+ 				C18733AF29B9492300519CDF /* Collection.swift in Sources */,
+ 				892A5DA22231E137008961AB /* HUDProvider.swift in Sources */,
++				DDAF746929F4234000719F0A /* ProfileViewModel.swift in Sources */,
+ 				898E6E6C224194060019E459 /* UIColor.swift in Sources */,
+ 				43BA717D201EE7090058961E /* GlucoseRangeTableViewCell.swift in Sources */,
+ 				B455F3A425FF7FF0000ED456 /* CorrectionRangeOverridesEditorViewModel.swift in Sources */,
+@@ -3902,6 +3921,7 @@
+ 				1D1065E9282DC54700026A70 /* VideoPlayView.swift in Sources */,
+ 				E99A132E2557548300D3F5B3 /* SegmentedGaugeBar.swift in Sources */,
+ 				B455F31825FBEC5F000ED456 /* SuspendThresholdEditorViewModel.swift in Sources */,
++				DDAF746729F422C600719F0A /* ProfileView.swift in Sources */,
+ 				892A5DB32231E191008961AB /* LevelHUDView.swift in Sources */,
+ 				B41A60B223D1DBC700636320 /* UIFont.swift in Sources */,
+ 				B41A60AF23D1DB5B00636320 /* TableViewTitleLabel.swift in Sources */,
+diff --git a/LoopKit/LoopKitUI/ViewModels/ProfileViewModel+FileManagement.swift b/LoopKit/LoopKitUI/ViewModels/ProfileViewModel+FileManagement.swift
+new file mode 100644
+index 0000000..a809073
+--- /dev/null
++++ b/LoopKit/LoopKitUI/ViewModels/ProfileViewModel+FileManagement.swift
+@@ -0,0 +1,232 @@
++//
++//  ProfileViewModel+FileManagement.swift
++//  LoopKitUI
++//
++//  Created by Jonas Björkert on 2023-05-19.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import LoopKit
++import HealthKit
++
++public enum ProfileValidationError: Error, LocalizedError {
++    case fileLoadError
++    case unsupportedIncrement
++    case correctionRangeError
++    case insulinSensitivityError
++    case carbRatioError
++    case basalRateError
++    case maxBasalRateNotSet
++
++    public var errorDescription: String? {
++        switch self {
++        case .fileLoadError:
++            return "Unable to load the profile file."
++        case .unsupportedIncrement:
++            return "The profile contains unsupported increments."
++        case .correctionRangeError:
++            return "Correction Range values are out of bounds."
++        case .insulinSensitivityError:
++            return "Insulin Sensitivity values are out of bounds."
++        case .carbRatioError:
++            return "Carb Ratio values are out of bounds."
++        case .basalRateError:
++            return "Basal Rate values are out of bounds."
++        case .maxBasalRateNotSet:
++            return "Maximum Basal Rate is not set."
++        }
++    }
++}
++
++public enum LoadProfileResult {
++    case success
++    case failure(Error)
++}
++
++// MARK: File management
++extension ProfileViewModel {
++    private var profilesDirectory: URL {
++        let fileManager = FileManager.default
++        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
++        return documentsDirectory.appendingPathComponent("LoopProfile")
++    }
++
++    private func createProfileDirectoryIfNotExists() throws {
++        let fileManager = FileManager.default
++        var isDir : ObjCBool = false
++        if !fileManager.fileExists(atPath: profilesDirectory.path, isDirectory: &isDir) {
++            try fileManager.createDirectory(at: profilesDirectory, withIntermediateDirectories: true, attributes: nil)
++        } else if !isDir.boolValue {
++            throw NSError(domain: NSCocoaErrorDomain, code: NSFileWriteFileExistsError, userInfo: nil)
++        }
++    }
++
++
++    private func getAllProfileFiles() throws -> [URL] {
++        let fileManager = FileManager.default
++        let files = try fileManager.contentsOfDirectory(at: profilesDirectory, includingPropertiesForKeys: nil)
++        return files.filter { $0.pathExtension == "json" }
++    }
++
++    private func encodeProfile(_ profile: Profile) throws -> Data {
++        return try JSONEncoder().encode(profile)
++    }
++
++    private func decodeProfile(from data: Data) throws -> Profile {
++        return try JSONDecoder().decode(Profile.self, from: data)
++    }
++
++    public func saveProfile(withName name: String) {
++        do {
++            try createProfileDirectoryIfNotExists()
++
++            if let existingProfile = getProfileReference(withName: name) {
++                removeProfile(profileReference: existingProfile)
++            }
++
++            let profile = Profile(
++                name: name,
++                correctionRange: (therapySettings.glucoseTargetRangeSchedule?.schedule(for: .milligramsPerDeciliter)!)!,
++                carbRatioSchedule: therapySettings.carbRatioSchedule!,
++                basalRateSchedule: therapySettings.basalRateSchedule!,
++                insulinSensitivitySchedule: (therapySettings.insulinSensitivitySchedule?.schedule(for: .milligramsPerDeciliter)!)!
++            )
++
++            let jsonData = try encodeProfile(profile)
++
++            let dateFormatter = DateFormatter()
++            dateFormatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
++            let fileName = dateFormatter.string(from: Date()) + ".json"
++            let fileURL = profilesDirectory.appendingPathComponent(fileName)
++
++            try jsonData.write(to: fileURL)
++
++            self.loadProfiles()
++        } catch {
++            print("An error occurred while saving profile: \(error)")
++        }
++    }
++
++    public func loadProfiles() {
++        do {
++            let profileFiles = try getAllProfileFiles()
++
++            var newProfiles = [ProfileReference]()
++            for fileURL in profileFiles {
++                let data = try Data(contentsOf: fileURL)
++                let profile = try decodeProfile(from: data)
++                let profileRef = ProfileReference(name: profile.name, fileName: fileURL.lastPathComponent)
++                newProfiles.append(profileRef)
++            }
++
++            self.profiles = newProfiles
++        } catch {
++            print("An error occurred while loading profiles: \(error)")
++        }
++    }
++
++    public func loadProfile(profile: Profile, completion: @escaping (LoadProfileResult) -> Void) {
++        do {
++            delegate?.syncBasalRateSchedule(items: profile.basalRateSchedule.items, completion: { [weak self] result in
++                switch result {
++                case .success(let syncedSchedule):
++                    DispatchQueue.main.async {
++                        self?.saveCorrectionRange(range: profile.correctionRange)
++                        self?.saveCarbRatioSchedule(carbRatioSchedule: profile.carbRatioSchedule)
++                        self?.saveBasalRates(basalRates: syncedSchedule)
++                        self?.saveInsulinSensitivitySchedule(insulinSensitivitySchedule: profile.insulinSensitivitySchedule)
++                        print("New profile loaded")
++                        completion(.success)
++                    }
++                case .failure(let error):
++                    print("An error occurred while syncing basal rates: \(error)")
++                    completion(.failure(error))
++                }
++            })
++        }
++    }
++
++    func getProfileReference(withName name: String) -> ProfileReference? {
++        return profiles.first(where: { $0.name == name })
++    }
++
++    public func removeProfile(profile: Profile) {
++        guard let profileReference = getProfileReference(withName: profile.name) else {
++            print("No ProfileReference found for given Profile")
++            return
++        }
++
++        removeProfile(profileReference: profileReference)
++    }
++
++    public func removeProfile(profileReference: ProfileReference) {
++        do {
++            let fileManager = FileManager.default
++            let fileURL = profilesDirectory.appendingPathComponent(profileReference.fileName)
++            try fileManager.removeItem(at: fileURL)
++            loadProfiles()
++        } catch {
++            print("An error occurred while removing profile: \(error)")
++        }
++    }
++
++    func doesProfileExist(withName name: String) -> Bool {
++        return profiles.contains(where: { $0.name == name })
++    }
++
++    public func getProfile(from profileReference: ProfileReference) throws -> Profile {
++        let fileURL = profilesDirectory.appendingPathComponent(profileReference.fileName)
++        let data = try Data(contentsOf: fileURL)
++        let getProfile = try decodeProfile(from: data)
++        return getProfile
++    }
++
++    public func validateProfile(_ profile: Profile) -> Result<Void, ProfileValidationError> {
++        guard let supportedIncrements = delegate?.pumpSupportedIncrements() else {
++            return .failure(.fileLoadError)
++        }
++
++        // Checking Correction Range Schedule
++        for item in profile.correctionRange.items {
++            let minValue = HKQuantity(unit: .milligramsPerDeciliter, doubleValue: item.value.minValue)
++            let maxValue = HKQuantity(unit: .milligramsPerDeciliter, doubleValue: item.value.maxValue)
++
++            if !(Guardrail.correctionRange.absoluteBounds.contains(minValue) && Guardrail.correctionRange.absoluteBounds.contains(maxValue)) {
++                return .failure(.correctionRangeError)
++            }
++        }
++
++        // Checking Insulin Sensitivity Schedule
++        for item in profile.insulinSensitivitySchedule.items {
++            let value = HKQuantity(unit: HKUnit.milligramsPerDeciliter.unitDivided(by: .internationalUnit()), doubleValue: item.value)
++
++            if !Guardrail.insulinSensitivity.absoluteBounds.contains(value) {
++                return .failure(.insulinSensitivityError)
++            }
++        }
++
++        // Checking Carb Ratio Schedule
++        for item in profile.carbRatioSchedule.items {
++            let value = HKQuantity(unit: .gramsPerUnit, doubleValue: item.value)
++
++            if !Guardrail.carbRatio.absoluteBounds.contains(value) {
++                return .failure(.carbRatioError)
++            }
++        }
++
++        // Checking Basal Rate Schedule
++        if let maximumBasalRate = therapySettings.maximumBasalRatePerHour {
++            for item in profile.basalRateSchedule.items {
++                let value = item.value
++
++                if value > maximumBasalRate || !supportedIncrements.basalRates.contains(value) {
++                    return .failure(.basalRateError)
++                }
++            }
++        } else {
++            return .failure(.maxBasalRateNotSet)
++        }
++
++        return .success(())
++    }
++}
+diff --git a/LoopKit/LoopKitUI/ViewModels/ProfileViewModel.swift b/LoopKit/LoopKitUI/ViewModels/ProfileViewModel.swift
+new file mode 100644
+index 0000000..7799d32
+--- /dev/null
++++ b/LoopKit/LoopKitUI/ViewModels/ProfileViewModel.swift
+@@ -0,0 +1,74 @@
++//
++//  ProfileViewModel.swift
++//  LoopKitUI
++//
++//  Created by Jonas Björkert on 2023-04-22.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import Combine
++import LoopKit
++import HealthKit
++import SwiftUI
++
++public class ProfileViewModel: ObservableObject {
++
++    @Published public var therapySettings: TherapySettings
++    @Published public var profiles = [ProfileReference]()
++
++    internal weak var delegate: TherapySettingsViewModelDelegate?
++
++    public init(therapySettings: TherapySettings,
++                pumpSupportedIncrements: (() -> PumpSupportedIncrements?)? = nil,
++                sensitivityOverridesEnabled: Bool = false,
++                adultChildInsulinModelSelectionEnabled: Bool = false,
++                prescription: Prescription? = nil,
++                delegate: TherapySettingsViewModelDelegate? = nil) {
++        self.therapySettings = therapySettings
++        self.delegate = delegate
++        self.loadProfiles()
++    }
++
++    public func pumpSupportedIncrements() -> PumpSupportedIncrements? {
++        return delegate?.pumpSupportedIncrements()
++    }
++}
++
++public struct Profile: Codable {
++    let name: String
++    let correctionRange: GlucoseRangeSchedule
++    let carbRatioSchedule: CarbRatioSchedule
++    let basalRateSchedule: BasalRateSchedule
++    let insulinSensitivitySchedule: InsulinSensitivitySchedule
++}
++
++public struct ProfileReference: Codable, Equatable {
++    var name: String
++    var fileName: String
++}
++
++
++// MARK: Saving
++extension ProfileViewModel {
++
++    public func saveCorrectionRange(range: GlucoseRangeSchedule) {
++        therapySettings.glucoseTargetRangeSchedule = range
++        delegate?.saveCompletion(therapySettings: therapySettings)
++    }
++
++    public func saveBasalRates(basalRates: BasalRateSchedule) {
++        therapySettings.basalRateSchedule = basalRates
++        delegate?.saveCompletion(therapySettings: therapySettings)
++    }
++
++    public func saveCarbRatioSchedule(carbRatioSchedule: CarbRatioSchedule) {
++        therapySettings.carbRatioSchedule = carbRatioSchedule
++        delegate?.saveCompletion(therapySettings: therapySettings)
++    }
++
++    public func saveInsulinSensitivitySchedule(insulinSensitivitySchedule: InsulinSensitivitySchedule) {
++        therapySettings.insulinSensitivitySchedule = insulinSensitivitySchedule
++        delegate?.saveCompletion(therapySettings: therapySettings)
++    }
++}
+diff --git a/LoopKit/LoopKitUI/Views/Settings Editors/NewProfileEditor.swift b/LoopKit/LoopKitUI/Views/Settings Editors/NewProfileEditor.swift
+new file mode 100644
+index 0000000..446910e
+--- /dev/null
++++ b/LoopKit/LoopKitUI/Views/Settings Editors/NewProfileEditor.swift	
+@@ -0,0 +1,79 @@
++//
++//  NewProfileEditor.swift
++//  LoopKitUI
++//
++//  Created by Jonas Björkert on 2023-05-19.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import SwiftUI
++
++struct NewProfileEditor: View {
++    @Binding var isPresented: Bool
++    @State var newProfileName: String
++    var viewModel: ProfileViewModel
++    @State private var showAlert = false
++
++    var body: some View {
++        VStack(spacing: 0) {
++            ModalHeaderButtonBar(
++                leading: { cancelButton },
++                center: {
++                    Text("New Profile")
++                        .font(.headline)
++                },
++                trailing: { addButton }
++            )
++
++            TextField("Profile Name", text: $newProfileName)
++                .textFieldStyle(RoundedBorderTextFieldStyle())
++                .padding()
++                .background(
++                    RoundedCorners(radius: 10, corners: [.bottomLeft, .bottomRight])
++                        .fill(Color(.secondarySystemGroupedBackground))
++                )
++        }
++        .padding(.horizontal)
++        .alert(isPresented: $showAlert) {
++            Alert(
++                title: Text("Overwrite Existing Profile"),
++                message: Text("A profile with this name already exists. Would you like to overwrite it?"),
++                primaryButton: .destructive(Text("Overwrite")) {
++                    self.viewModel.saveProfile(withName: self.newProfileName)
++                    self.isPresented = false
++                },
++                secondaryButton: .cancel()
++            )
++        }
++    }
++
++    var addButton: some View {
++        Button(
++            action: {
++                withAnimation {
++                    if viewModel.doesProfileExist(withName: self.newProfileName) {
++                        self.showAlert = true
++                    } else {
++                        self.viewModel.saveProfile(withName: self.newProfileName)
++                        self.isPresented = false
++                    }
++                }
++            }, label: {
++                Text("Add")
++            }
++        )
++    }
++
++    var cancelButton: some View {
++        Button(
++            action: {
++                withAnimation {
++                    self.isPresented = false
++                }
++            }, label: {
++                Text("Cancel")
++            }
++        )
++    }
++}
+diff --git a/LoopKit/LoopKitUI/Views/Settings Editors/ProfilePreviewView.swift b/LoopKit/LoopKitUI/Views/Settings Editors/ProfilePreviewView.swift
+new file mode 100644
+index 0000000..a056915
+--- /dev/null
++++ b/LoopKit/LoopKitUI/Views/Settings Editors/ProfilePreviewView.swift	
+@@ -0,0 +1,277 @@
++//
++//  ProfilePreviewView.swift
++//  LoopKitUI
++//
++//  Created by Jonas Björkert on 2023-05-23.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import SwiftUI
++import HealthKit
++import LoopKit
++
++struct ProfilePreviewView: View {
++    @EnvironmentObject private var displayGlucoseUnitObservable: DisplayGlucoseUnitObservable
++    @ObservedObject var viewModel: ProfileViewModel
++    @Environment(\.dismissAction) var dismissAction
++    @Environment(\.presentationMode) var presentationMode
++    var profile: Profile
++
++    @State private var showingAlert = false
++    @State private var activeAlert: ActiveAlert = .load
++    @State private var errorText: String?
++
++    let nilDestination: (_ dismiss: @escaping () -> Void) -> AnyView = { _ in AnyView(EmptyView()) }
++
++    var body: some View {
++        ScrollView {
++            VStack(alignment: .leading) {
++                Text("Review this profile before choosing to Load or Return to profile screen.")
++                    .font(.subheadline)
++                    .foregroundColor(.secondary)
++                    .padding([.leading, .trailing])
++                    .fixedSize(horizontal: false, vertical: true) // this allows the text to wrap
++                    .textCase(nil) // keeps the original text casing
++
++                profileCardStack
++
++                Button(action: {
++                    activeAlert = .load
++                    showingAlert = true
++                }) {
++                    HStack {
++                        Spacer()
++                        Text("Load")
++                            .foregroundColor(.white)
++                            .padding()
++                        Spacer()
++                    }
++                }
++                .background(Color.blue)
++                .cornerRadius(10)
++                .padding(.horizontal)
++
++                Button(action: {
++                    activeAlert = .delete
++                    showingAlert = true
++                }) {
++                    HStack {
++                        Spacer()
++                        Text("Delete")
++                            .foregroundColor(.white)
++                            .padding()
++                        Spacer()
++                    }
++                }
++                .background(Color.red)
++                .cornerRadius(10)
++                .padding(.horizontal)
++
++            }
++        }
++        .navigationBarHidden(false)
++        .background(Color(.systemGroupedBackground))
++        .navigationTitle(Text(profile.name))
++        .alert(isPresented: $showingAlert) {
++            switch activeAlert {
++            case .load:
++                return Alert(
++                    title: Text("Load Profile"),
++                    message: Text("Do you want to load the profile \(profile.name)?"),
++                    primaryButton: .default(Text("Yes"), action: {
++                        let validationResult = viewModel.validateProfile(profile)
++                        switch validationResult {
++                        case .success:
++                            viewModel.loadProfile(profile: profile) { result in
++                                switch result {
++                                case .success:
++                                    dismissAction()
++                                case .failure(let error):
++                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
++                                        self.errorText = error.localizedDescription
++                                        self.activeAlert = .error
++                                        self.showingAlert = true
++                                    }
++                                }
++                            }
++                        case .failure(let error):
++                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
++                                self.errorText = error.localizedDescription
++                                self.activeAlert = .error
++                                self.showingAlert = true
++                            }
++                        }
++                    }),
++                    secondaryButton: .cancel()
++                )
++            case .delete:
++                return Alert(
++                    title: Text("Delete Profile"),
++                    message: Text("Are you sure you want to delete the profile \(profile.name)? This action cannot be undone."),
++                    primaryButton: .destructive(Text("Delete"), action: {
++                        viewModel.removeProfile(profile: profile)
++                        self.presentationMode.wrappedValue.dismiss()
++                    }),
++                    secondaryButton: .cancel()
++                )
++            case .error:
++                return Alert(
++                    title: Text("Error loading profile"),
++                    message: Text(errorText ?? "Unknown error"),
++                    dismissButton: .default(Text("OK"))
++                )
++            }
++        }
++    }
++
++    private var profileCardStack: CardStack {
++        var cards: [Card] = []
++
++        cards.append(correctionRangeSection)
++        cards.append(carbRatioSection)
++        cards.append(basalRatesSection)
++        cards.append(insulinSensitivitiesSection)
++
++        return CardStack(cards: cards)
++    }
++
++    private var correctionRangeSection: Card {
++        card(for: .glucoseTargetRange) {
++            if let items = profile.correctionRange.schedule(for: glucoseUnit)?.items {
++                SectionDivider()
++                ForEach(items.indices, id: \.self) { index in
++                    if index > 0 {
++                        SettingsDivider()
++                    }
++
++                    ScheduleRangeItem(time: items[index].startTime,
++                                      range: items[index].value,
++                                      unit: glucoseUnit,
++                                      guardrail: .correctionRange)
++                }
++            }
++        }
++    }
++
++    private var carbRatioSection: Card {
++        card(for: .carbRatio) {
++            SectionDivider()
++            let items = profile.carbRatioSchedule.items
++            ForEach(items.indices, id: \.self) { index in
++                if index > 0 {
++                    SettingsDivider()
++                }
++
++                ScheduleValueItem(time: items[index].startTime,
++                                  value: items[index].value,
++                                  unit: .gramsPerUnit,
++                                  guardrail: .carbRatio)
++            }
++        }
++    }
++
++    private var basalRatesSection: Card {
++        card(for: .basalRate) {
++            let items = profile.basalRateSchedule.items
++            if let supportedBasalRates = viewModel.pumpSupportedIncrements()?.basalRates
++            {
++                SectionDivider()
++                let total = profile.basalRateSchedule.total()
++                ForEach(items.indices, id: \.self) { index in
++                    if index > 0 {
++                        SettingsDivider()
++                    }
++
++                    ScheduleValueItem(time: items[index].startTime,
++                                      value:  items[index].value,
++                                      unit: .internationalUnitsPerHour,
++                                      guardrail: .basalRate(supportedBasalRates: supportedBasalRates))
++                }
++                HStack {
++                    Text("Total")
++                        .bold()
++                        .foregroundColor(.primary)
++                    Spacer()
++                    Text(String(format: "%.2f ",total))
++                        .foregroundColor(.primary) +
++                    Text("U/day")
++                        .foregroundColor(.secondary)
++                }
++            }
++        }
++    }
++
++    private var insulinSensitivitiesSection: Card {
++        card(for: .insulinSensitivity) {
++            if let items = profile.insulinSensitivitySchedule.schedule(for: glucoseUnit)?.items
++            {
++                SectionDivider()
++                ForEach(items.indices, id: \.self) { index in
++                    if index > 0 {
++                        SettingsDivider()
++                    }
++                    ScheduleValueItem(time: items[index].startTime,
++                                      value: items[index].value,
++                                      unit: sensitivityUnit,
++                                      guardrail: .insulinSensitivity)
++                }
++            }
++        }
++    }
++}
++
++
++struct SectionWithContent<Content>: View where Content: View {
++    let title: String
++    let content: Content
++
++    init(title: String,
++         content: () -> Content)
++    {
++        self.title = title
++        self.content = content()
++    }
++
++    public var body: some View {
++        Section {
++            Text(title)
++                .bold()
++                .frame(maxWidth: .infinity, alignment: .leading)
++            content
++        }
++    }
++}
++
++// MARK: Utilities
++extension ProfilePreviewView {
++
++    private var glucoseUnit: HKUnit {
++        displayGlucoseUnitObservable.displayGlucoseUnit
++    }
++
++    private var sensitivityUnit: HKUnit {
++        glucoseUnit.unitDivided(by: .internationalUnit())
++    }
++
++    private func card<Content>(for therapySetting: TherapySetting, @ViewBuilder content: @escaping () -> Content) -> Card where Content: View {
++        Card {
++            SectionWithContent(title: therapySetting.title,
++                               content: content)
++        }
++    }
++}
++
++fileprivate struct SectionDivider: View {
++    var body: some View {
++        Divider()
++            .padding(.trailing, -16)
++    }
++}
++
++fileprivate struct SettingsDivider: View {
++    var body: some View {
++        Divider()
++            .padding(.trailing, -8)
++    }
++}
+diff --git a/LoopKit/LoopKitUI/Views/Settings Editors/ProfileView.swift b/LoopKit/LoopKitUI/Views/Settings Editors/ProfileView.swift
+new file mode 100644
+index 0000000..7bc6159
+--- /dev/null
++++ b/LoopKit/LoopKitUI/Views/Settings Editors/ProfileView.swift	
+@@ -0,0 +1,115 @@
++//
++//  ProfileView.swift
++//  LoopKitUI
++//
++//  Created by Jonas Björkert on 2023-04-22.
++//  Copyright © 2023 LoopKit Authors. All rights reserved.
++//
++
++import Foundation
++import AVFoundation
++import HealthKit
++import LoopKit
++import SwiftUI
++
++enum ActiveAlert {
++    case load, delete, error
++}
++
++public struct ProfileView: View {
++    @ObservedObject public var viewModel: ProfileViewModel
++    @Environment(\.dismissAction) var dismissAction
++    @State private var newProfileName: String = ""
++    @State private var isAddingNewProfile = false
++    @State private var selectedProfileIndex: Int? = nil
++
++    public init(viewModel: ProfileViewModel) {
++        self.viewModel = viewModel
++    }
++
++    private var dismissButton: some View {
++        Button(action: dismissAction) {
++            Text(LocalizedString("Done", comment: "Text for dismiss button"))
++                .bold()
++        }
++    }
++
++    public var body: some View {
++        ZStack {
++            NavigationView {
++                ConfigurationPageScrollView(
++                    content: {
++                        VStack(alignment: .leading) {
++                            Text("Press '+' to save the current glucose target range, carb ratio, basal rates, and insulin sensitivity settings as a new profile. Tap on a profile to review settings. You can then decide to load or delete the profile.")
++                                .font(.subheadline)
++                                .foregroundColor(.secondary)
++                                .padding([.leading, .trailing])
++                                .fixedSize(horizontal: false, vertical: true) // this allows the text to wrap
++                                .textCase(nil) // keeps the original text casing
++
++                            if !viewModel.profiles.isEmpty {
++                                List {
++                                    ForEach(viewModel.profiles.indices, id: \.self) { index in
++                                        if let profile = try? viewModel.getProfile(from: viewModel.profiles[index]) {
++                                            NavigationLink(destination: ProfilePreviewView(viewModel: viewModel, profile: profile)) {
++                                                Text(viewModel.profiles[index].name)
++                                            }
++                                        }
++                                    }
++                                }.padding(.top, -15)
++                            }
++                        }
++                    },
++                    actionArea: { EmptyView() } // no action area in this case
++                )
++                .navigationBarItems(
++                    leading: Button(action: { withAnimation { isAddingNewProfile = true } }) {
++                        Image(systemName: "plus")
++                    },
++                    trailing: dismissButton
++                )
++                .navigationTitle(Text(LocalizedString("Profiles", comment: "Title on ProfileView")))
++            }
++            .navigationBarHidden(false)
++            .background(Color(.systemGroupedBackground))
++
++            if isAddingNewProfile {
++                DarkenedOverlay()
++
++                NewProfileEditor(
++                    isPresented: $isAddingNewProfile,
++                    newProfileName: newProfileName,
++                    viewModel: viewModel
++                )
++                .transition(AnyTransition.move(edge: .bottom).combined(with: .opacity).animation(.default))
++            }
++        }
++    }
++}
++
++struct ProfileView_Previews: PreviewProvider {
++    static let preview_glucoseScheduleItems = [
++        RepeatingScheduleValue(startTime: 0, value: DoubleRange(80...90)),
++        RepeatingScheduleValue(startTime: 1800, value: DoubleRange(90...100)),
++        RepeatingScheduleValue(startTime: 3600, value: DoubleRange(100...110))
++    ]
++
++    static let preview_therapySettings = TherapySettings(
++        glucoseTargetRangeSchedule: GlucoseRangeSchedule(unit: .milligramsPerDeciliter, dailyItems: preview_glucoseScheduleItems),
++        correctionRangeOverrides: CorrectionRangeOverrides(preMeal: DoubleRange(88...99),
++                                                           workout: DoubleRange(99...111),
++                                                           unit: .milligramsPerDeciliter),
++        maximumBolus: 4,
++        suspendThreshold: GlucoseThreshold.init(unit: .milligramsPerDeciliter, value: 60),
++        insulinSensitivitySchedule: InsulinSensitivitySchedule(unit: HKUnit.milligramsPerDeciliter.unitDivided(by: HKUnit.internationalUnit()), dailyItems: []),
++        carbRatioSchedule: nil,
++        basalRateSchedule: BasalRateSchedule(dailyItems: [RepeatingScheduleValue(startTime: 0, value: 0.2), RepeatingScheduleValue(startTime: 1800, value: 0.75)]))
++
++    static let preview_supportedBasalRates = [0.2, 0.5, 0.75, 1.0]
++    static let preview_supportedBolusVolumes = [1.0, 2.0, 3.0]
++    static let preview_supportedMaximumBolusVolumes = [5.0, 10.0, 15.0]
++
++    static var previews: some View {
++        ProfileView(viewModel: ProfileViewModel(therapySettings: preview_therapySettings))
++    }
++}
