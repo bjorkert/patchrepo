@@ -1,4 +1,4 @@
-Submodule Loop 3034e45..529a7a3:
+Submodule Loop 3034e45..0b50ae4:
 diff --git a/Loop/Loop/Views/SettingsView.swift b/Loop/Loop/Views/SettingsView.swift
 index bd4e86e8..375b45a2 100644
 --- a/Loop/Loop/Views/SettingsView.swift
@@ -49,7 +49,7 @@ index bd4e86e8..375b45a2 100644
              ForEach(pluginMenuItems.filter {$0.section == .configuration}) { item in
                  item.view
              }
-Submodule LoopKit b6300a8..26d42d8:
+Submodule LoopKit b6300a8..1ab9e39:
 diff --git a/LoopKit/LoopKit.xcodeproj/project.pbxproj b/LoopKit/LoopKit.xcodeproj/project.pbxproj
 index 8992464..21a9eae 100644
 --- a/LoopKit/LoopKit.xcodeproj/project.pbxproj
