@@ -1,6 +1,6 @@
-Submodule Loop 3034e45..529a7a3:
+Submodule Loop contains modified content
 diff --git a/Loop/Loop/Views/SettingsView.swift b/Loop/Loop/Views/SettingsView.swift
-index bd4e86e8..375b45a2 100644
+index dc3f6ec3..61b65f0e 100644
 --- a/Loop/Loop/Views/SettingsView.swift
 +++ b/Loop/Loop/Views/SettingsView.swift
 @@ -24,6 +24,7 @@ public struct SettingsView: View {
@@ -49,12 +49,12 @@ index bd4e86e8..375b45a2 100644
              ForEach(pluginMenuItems.filter {$0.section == .configuration}) { item in
                  item.view
              }
-Submodule LoopKit b6300a8..26d42d8:
+Submodule LoopKit contains modified content
 diff --git a/LoopKit/LoopKit.xcodeproj/project.pbxproj b/LoopKit/LoopKit.xcodeproj/project.pbxproj
-index 8992464..21a9eae 100644
+index c744054..e864d86 100644
 --- a/LoopKit/LoopKit.xcodeproj/project.pbxproj
 +++ b/LoopKit/LoopKit.xcodeproj/project.pbxproj
-@@ -803,6 +803,11 @@
+@@ -797,6 +797,11 @@
  		C1FAEC1D264AD6B400A3250B /* DeviceStatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FAEC1C264AD6B400A3250B /* DeviceStatusBadge.swift */; };
  		C1FAEC1F264AE12700A3250B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47ECF8725DC20810024A54D /* UIImage.swift */; };
  		C1FAEC21264AEEA300A3250B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FAEC20264AEEA300A3250B /* UIImage.swift */; };
@@ -66,7 +66,7 @@ index 8992464..21a9eae 100644
  		E9077D2724ACD59F0066A88D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9077D2624ACD59F0066A88D /* InformationView.swift */; };
  		E9077D2A24ACDE2C0066A88D /* CorrectionRangeInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9077D2924ACDE2C0066A88D /* CorrectionRangeInformationView.swift */; };
  		E9086B2924B39EDC0062F5C8 /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9086B2824B39EDC0062F5C8 /* ChartsTableViewController.swift */; };
-@@ -1795,6 +1800,11 @@
+@@ -1783,6 +1788,11 @@
  		C1FDCC0A29C786F90056E652 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
  		C1FDCC0B29C786F90056E652 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
  		C1FF3D4E29C786A900BDC1EC /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -78,13 +78,13 @@ index 8992464..21a9eae 100644
  		E9077D2624ACD59F0066A88D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
  		E9077D2924ACDE2C0066A88D /* CorrectionRangeInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionRangeInformationView.swift; sourceTree = "<group>"; };
  		E9086B2824B39EDC0062F5C8 /* ChartsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
-@@ -3006,11 +3016,13 @@
+@@ -2988,11 +2998,13 @@
  			isa = PBXGroup;
  			children = (
  				B455F3A325FF7FF0000ED456 /* CorrectionRangeOverridesEditorViewModel.swift */,
 +				DDAF746829F4234000719F0A /* ProfileViewModel.swift */,
  				B4B7C1BB2604E3FC007379F6 /* CorrectionRangeScheduleEditorViewModel.swift */,
- 				B4D4C20C25F95A8700DA809D /* DisplayGlucosePreference.swift */,
+ 				B4D4C20C25F95A8700DA809D /* DisplayGlucoseUnitObservable.swift */,
  				B455F48025FF9A8B000ED456 /* InsulinSensitivityScheduleEditorViewModel.swift */,
  				B455F2A125FBE985000ED456 /* SuspendThresholdEditorViewModel.swift */,
  				1D1FCE2424BD42EF000300A8 /* TherapySettingsViewModel.swift */,
@@ -92,7 +92,7 @@ index 8992464..21a9eae 100644
  			);
  			path = ViewModels;
  			sourceTree = "<group>";
-@@ -3141,6 +3153,9 @@
+@@ -3123,6 +3135,9 @@
  				E96DCB5924AF74AC007117BC /* SuspendThresholdEditor.swift */,
  				1D1FCE2A24BE704A000300A8 /* TherapySetting+Settings.swift */,
  				1D1A019D24B678BF0077D86E /* TherapySettingsView.swift */,
@@ -102,7 +102,7 @@ index 8992464..21a9eae 100644
  			);
  			path = "Settings Editors";
  			sourceTree = "<group>";
-@@ -3822,6 +3837,7 @@
+@@ -3804,6 +3819,7 @@
  				E9086B4824B5405E0062F5C8 /* ChartAxisValueDoubleUnit.swift in Sources */,
  				B429D66C24BF7204003E1B4A /* GlucoseTrend.swift in Sources */,
  				432CF86720D76AB90066B889 /* SettingsTableViewCell.swift in Sources */,
@@ -110,7 +110,7 @@ index 8992464..21a9eae 100644
  				898B4E7B246DC6A70053C484 /* CorrectionRangeScheduleEditor.swift in Sources */,
  				E9E5E56A24D5CCE800B5DFFE /* OverrideViewCell.swift in Sources */,
  				892A5DB42231E191008961AB /* LevelMaskView.swift in Sources */,
-@@ -3878,8 +3894,10 @@
+@@ -3859,8 +3875,10 @@
  				E9C58A6E24DA65E400487A17 /* HistoricalOverrideDetailView.swift in Sources */,
  				895FE08222011F0C00FCF18A /* LabeledTextFieldTableViewCell.swift in Sources */,
  				B43DA44224D9CD8500CAFF4E /* Environment+Colors.swift in Sources */,
@@ -121,7 +121,7 @@ index 8992464..21a9eae 100644
  				E96DCB5A24AF74AC007117BC /* SuspendThresholdEditor.swift in Sources */,
  				E96DCB5824AEF50F007117BC /* SuspendThresholdInformationView.swift in Sources */,
  				C140E0522602908A000A4FF7 /* SettingsPresentationMode.swift in Sources */,
-@@ -3946,6 +3964,7 @@
+@@ -3927,6 +3945,7 @@
  				E93C86B624D08CAD0073089B /* InsulinSensitivityInformationView.swift in Sources */,
  				C18733AF29B9492300519CDF /* Collection.swift in Sources */,
  				892A5DA22231E137008961AB /* HUDProvider.swift in Sources */,
@@ -129,7 +129,7 @@ index 8992464..21a9eae 100644
  				898E6E6C224194060019E459 /* UIColor.swift in Sources */,
  				43BA717D201EE7090058961E /* GlucoseRangeTableViewCell.swift in Sources */,
  				B455F3A425FF7FF0000ED456 /* CorrectionRangeOverridesEditorViewModel.swift in Sources */,
-@@ -3968,6 +3987,7 @@
+@@ -3949,6 +3968,7 @@
  				1D1065E9282DC54700026A70 /* VideoPlayView.swift in Sources */,
  				E99A132E2557548300D3F5B3 /* SegmentedGaugeBar.swift in Sources */,
  				B455F31825FBEC5F000ED456 /* SuspendThresholdEditorViewModel.swift in Sources */,
