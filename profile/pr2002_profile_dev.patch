@@ -1,6 +1,6 @@
-Submodule Loop 3034e45..0b50ae4:
+Submodule Loop 3034e45..d327895:
 diff --git a/Loop/Loop/Views/SettingsView.swift b/Loop/Loop/Views/SettingsView.swift
-index bd4e86e8..375b45a2 100644
+index bd4e86e8..d14812d7 100644
 --- a/Loop/Loop/Views/SettingsView.swift
 +++ b/Loop/Loop/Views/SettingsView.swift
 @@ -24,6 +24,7 @@ public struct SettingsView: View {
@@ -36,7 +36,7 @@ index bd4e86e8..375b45a2 100644
 +                                                        sensitivityOverridesEnabled: FeatureFlags.sensitivityOverridesEnabled,
 +                                                        adultChildInsulinModelSelectionEnabled: FeatureFlags.adultChildInsulinModelSelectionEnabled,
 +                                                        delegate: self.viewModel.therapySettingsViewModelDelegate))
-+                .environmentObject(displayGlucoseUnitObservable)
++                .environmentObject(displayGlucosePreference)
 +                .environment(\.dismissAction, self.dismiss)
 +                .environment(\.appName, self.appName)
 +                .environment(\.chartColorPalette, .primary)
@@ -49,7 +49,7 @@ index bd4e86e8..375b45a2 100644
              ForEach(pluginMenuItems.filter {$0.section == .configuration}) { item in
                  item.view
              }
-Submodule LoopKit b6300a8..1ab9e39:
+Submodule LoopKit b6300a8..7a57da9:
 diff --git a/LoopKit/LoopKit.xcodeproj/project.pbxproj b/LoopKit/LoopKit.xcodeproj/project.pbxproj
 index 8992464..21a9eae 100644
 --- a/LoopKit/LoopKit.xcodeproj/project.pbxproj
@@ -542,7 +542,7 @@ index 0000000..446910e
 +}
 diff --git a/LoopKit/LoopKitUI/Views/Settings Editors/ProfilePreviewView.swift b/LoopKit/LoopKitUI/Views/Settings Editors/ProfilePreviewView.swift
 new file mode 100644
-index 0000000..a056915
+index 0000000..8516dc4
 --- /dev/null
 +++ b/LoopKit/LoopKitUI/Views/Settings Editors/ProfilePreviewView.swift	
 @@ -0,0 +1,277 @@
@@ -560,7 +560,7 @@ index 0000000..a056915
 +import LoopKit
 +
 +struct ProfilePreviewView: View {
-+    @EnvironmentObject private var displayGlucoseUnitObservable: DisplayGlucoseUnitObservable
++    @EnvironmentObject private var displayGlucosePreference: DisplayGlucosePreference
 +    @ObservedObject var viewModel: ProfileViewModel
 +    @Environment(\.dismissAction) var dismissAction
 +    @Environment(\.presentationMode) var presentationMode
@@ -795,7 +795,7 @@ index 0000000..a056915
 +extension ProfilePreviewView {
 +
 +    private var glucoseUnit: HKUnit {
-+        displayGlucoseUnitObservable.displayGlucoseUnit
++        displayGlucosePreference.unit
 +    }
 +
 +    private var sensitivityUnit: HKUnit {
